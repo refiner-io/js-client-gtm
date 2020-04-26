@@ -1,5 +1,5 @@
 homepage: "https://refiner.io"
 documentation: "https://refiner.io/documentation/kb/getting-started/google-tag-manager/"
 versions:
-  - sha: dff03b0a573dfd6b20481372272dbf627e1591dc
-    changeNotes: "Allow tracking without User ID"
+  - sha: 65d8b052cc4020870c405a211f9be09d2910a566
+    changeNotes: "Added Terms of Service"
