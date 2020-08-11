@@ -72,6 +72,46 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "User Name (optional)",
     "simpleValueType": true,
     "valueHint": "e.g. Jane Doe"
+  },
+  {
+    "type": "PARAM_TABLE",
+    "name": "Additional Data",
+    "displayName": "Additional Data (optional)",
+    "paramTableColumns": [
+      {
+        "param": {
+          "type": "TEXT",
+          "name": "slug",
+          "displayName": "Field Identifier",
+          "simpleValueType": true,
+          "valueHint": "e.g. some_other_data",
+          "valueValidators": [
+            {
+              "type": "NON_EMPTY"
+            },
+            {
+              "type": "NON_EMPTY"
+            }
+          ]
+        },
+        "isUnique": true
+      },
+      {
+        "param": {
+          "type": "TEXT",
+          "name": "value",
+          "displayName": "Field Value",
+          "simpleValueType": true,
+          "valueHint": "e.g. {{ Another Data Field }}",
+          "valueValidators": [
+            {
+              "type": "NON_EMPTY"
+            }
+          ]
+        },
+        "isUnique": false
+      }
+    ]
   }
 ]
 
@@ -84,18 +124,28 @@ injectScript('https://js.refiner.io/v001/client.js');
 const createArgumentsQueue = require('createArgumentsQueue');
 const _refiner = createArgumentsQueue('_refiner', '_refinerQueue');
 
-// const log = require('logToConsole');
-// log(data);
+//const log = require('logToConsole');
+//log(data);
 
 _refiner('setProject', data['Project UUID']);  
 
 if (data['User ID'] || data['User Email'] || data['User Name']) {
-  // log('identify');
-    _refiner('identifyUser', {
+  
+    var sendThis = {
     id: data['User ID'] || null,
       email: data['User Email'] || null, 
       name: data['User Name'] || null, 
-  });
+  };
+
+    if (data['Additional Data']) {
+      for(var i = 0; i < data['Additional Data'].length; i++) { 
+        var row = data['Additional Data'][i];
+        sendThis[row.slug] = row.value;
+      }  
+    }  
+    
+    _refiner('identifyUser', sendThis);
+  
 } else {
   _refiner('ping');
 }
@@ -296,3 +346,4 @@ scenarios:
 ___NOTES___
 
 Created on 24/03/2020, 10:28:50
+
