@@ -1,5 +1,5 @@
 homepage: "https://refiner.io"
 documentation: "https://refiner.io/documentation/kb/getting-started/google-tag-manager/"
 versions:
-  - sha: ffe237b3bac590441e4051c5fea9e4de3d5208b8
-    changeNotes: "Added Terms of Service"
+  - sha: 204448c0e1ba988ad06a9d453efaee488c16f661
+    changeNotes: "Add option to submit additional user data"
