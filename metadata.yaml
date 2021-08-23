@@ -1,7 +1,7 @@
 homepage: "https://refiner.io"
 documentation: "https://refiner.io/docs/kb/install/google-tag-manager/"
 versions:
-  - sha: 575b50d5a46303710b9efecbf217fa044dae9293
+  - sha: 24cfdd39e3a9fa06f036b68be5b4e8ed5e61b4ef
     changeNotes: "Add support for account traits and attaching data to survey responses"
   - sha: 575b50d5a46303710b9efecbf217fa044dae9293
     changeNotes: "Performance improvements"
