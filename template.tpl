@@ -153,6 +153,15 @@ const _refiner = createArgumentsQueue('_refiner', '_refinerQueue');
 
 _refiner('setProject', data['Project UUID']);  
 
+if (data['Additional Response Data']) {
+  var additionalResponseData = {};
+  for(var i = 0; i < data['Additional Response Data'].length; i++) { 
+    var row = data['Additional Response Data'][i];
+    additionalResponseData[row.slug] = row.value;
+  }  
+  _refiner('addToResponse', additionalResponseData);
+}
+
 if (data['User ID'] || data['User Email'] || data['User Name']) {
   
     var userData = {
@@ -179,15 +188,6 @@ if (data['User ID'] || data['User Email'] || data['User Name']) {
 } else {
   _refiner('ping');
 }
-
-if (data['Additional Response Data']) {
-  var additionalResponseData = {};
-  for(var i = 0; i < data['Additional Response Data'].length; i++) { 
-    var row = data['Additional Response Data'][i];
-    additionalResponseData[row.slug] = row.value;
-  }  
-  _refiner('addToResponse', additionalResponseData);
-}  
 
 injectScript(url, data.gtmOnSuccess(), data.gtmOnFailure(), url);
 
@@ -387,3 +387,4 @@ scenarios:
 ___NOTES___
 
 Created on 24/03/2020, 10:28:50
+
