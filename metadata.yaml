@@ -1,6 +1,8 @@
 homepage: "https://refiner.io"
 documentation: "https://refiner.io/docs/kb/install/google-tag-manager/"
 versions:
+  - sha: b5e9226376edf57d26338351eabf42fa0e2c5fd6
+    changeNotes: "Bugfix: Execute addToResponse before identifyUser"
   - sha: 24cfdd39e3a9fa06f036b68be5b4e8ed5e61b4ef
     changeNotes: "Add support for account traits and attaching data to survey responses"
   - sha: 575b50d5a46303710b9efecbf217fa044dae9293
