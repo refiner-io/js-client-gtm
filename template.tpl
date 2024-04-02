@@ -14,7 +14,7 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Refiner",
-  "categories": ["SURVEY", "PERSONALIZATION", "SALES"],
+  "categories": ["SURVEY", "PERSONALIZATION", "SALES"],  
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
@@ -150,6 +150,8 @@ const _refiner = createArgumentsQueue('_refiner', '_refinerQueue');
 
 //const log = require('logToConsole');
 //log(data);
+
+_refiner('setInstallationMethod', 'gtm');
 
 _refiner('setProject', data['Project UUID']);  
 
