@@ -1,6 +1,8 @@
 homepage: "https://refiner.io"
 documentation: "https://refiner.io/docs/kb/install/google-tag-manager/"
 versions:
+  - sha: 22212746ec00858ffbf0e78a91f57e9e08d8a99a
+    changeNotes: 'Add information about installation method for easier debugging'
   - sha: b5e9226376edf57d26338351eabf42fa0e2c5fd6
     changeNotes: "Bugfix: Execute addToResponse before identifyUser"
   - sha: 24cfdd39e3a9fa06f036b68be5b4e8ed5e61b4ef
